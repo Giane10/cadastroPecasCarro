@@ -37,8 +37,9 @@ while True:
     opcao = input('>>> ')
 
     if opcao == '1':
-
+        precoReg = None
         Reg_Id += 1
+
         while True:
             nomeReg = input('Inserir o nome da peça >> ')
             fabricReg = input('Inserir o fabricante >> ')
@@ -47,8 +48,8 @@ while True:
                 try:
                     precoReg = int(input('Inserir o preço >> '))
                     break
-                except:
-                    print('inserir apenas números !')
+                except ValueError:
+                    print('Erro: por favor, insira apenas números inteiros!')
                     continue
 
             regPeca = Peca(in_Id=Reg_Id, in_nome=nomeReg, in_fabric=fabricReg, in_preco=precoReg)
